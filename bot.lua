@@ -1,9 +1,6 @@
-serpent = require("serpent")
-lgi = require ('lgi')
-redis = require('redis')
+serpent = (loadfile "serpent.lua")()
+redis = (loadfile "lua-redis.lua")()
 database = Redis.connect('127.0.0.1', 6379)
-notify = lgi.require('Notify')
-notify.init ("Telegram updates")
 chats = {}
 day = 86400
 bot_id = 196913743 -- Your Bot USER_ID
@@ -172,11 +169,6 @@ end
   -----------------------------------------------------------------------------------------------
 function chat_kick(chat_id, user_id)
   changeChatMemberStatus(chat_id, user_id, "Kicked")
-end
-  -----------------------------------------------------------------------------------------------
-function do_notify (user, msg)
-  local n = notify.Notification.new(user, msg)
-  n:show ()
 end
   -----------------------------------------------------------------------------------------------
 local function getParseMode(parse_mode)  
@@ -589,15 +581,6 @@ function tdcli_update_callback(data)
 	-------------------------
 	end
    end
-    -------------------------------------------
-    -------------------------------------------
-    if ((not d) and chat) then
-      if msg.content_.ID == "MessageText" then
-        do_notify (chat.title_, msg.content_.text_)
-      else
-        do_notify (chat.title_, msg.content_.ID)
-      end
-    end
   -----------------------------------------------------------------------------------------------
                                      -- end functions --
   -----------------------------------------------------------------------------------------------
