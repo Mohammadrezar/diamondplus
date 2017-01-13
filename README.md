@@ -1,7 +1,9 @@
 # >>[DiamondPlus](http://telegram.me/Telediamondch)<<
 An anti-spam bot based on new version of tg-cli
 
-# BlackPlus
+# BlackPlus Source
+
+# ستاره فراموش نشه
 
 # >> نصب
 برانصب کد زیر را در ترمینال کپی کنید
