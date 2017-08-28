@@ -12,10 +12,10 @@ local week = 604800
 local MaxChar = 15
 local NumberReturn = 12
 day = 86400
-bot_id = 226283662
-sudo_users = {335267337}
+bot_id = 219201071
+sudo_users = {219201071}
 sudo = {335267337}
-bot_owner = 335267337 
+bot_owner = 219201071 
 -----------------------------------------------------------------------------------------------
 local is_leader = function(msg)
   local var = false
